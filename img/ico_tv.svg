@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16">
+  <defs>
+    <style>
+      .cls-1 {
+        fill: #fff;
+      }
+    </style>
+  </defs>
+  <path id="패스_195" data-name="패스 195" class="cls-1" d="M1.6,1.6H14.4v8.806H1.6ZM0,0V12.008H7.2v1.724l-4.132.689L3.332,16,8,15.221,12.668,16l.263-1.579L8.8,13.732V12.008H16V0Z"/>
+</svg>
