@@ -107,3 +107,10 @@ select {
   font-weight: normal;
   font-style: normal;
 }
+
+@font-face {
+  font-family: 'Pretendard';
+  font-weight: bold;
+  font-style: normal;
+  src: url('https://cdn.jsdelivr.net/gh/webfontworld/pretendard/Pretendard-ExtraBold.woff') format('woff'),
+}

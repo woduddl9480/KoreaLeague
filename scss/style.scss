@@ -4,6 +4,150 @@
 .slider {
   background: linear-gradient(to right, #ff6933, #142266);
   height: 550px;
+  padding: 40px 0;
+
+  &-title {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 20px;
+  }
+
+  &-tab {
+    &-btn {
+      display: flex;
+      justify-content: center;
+      margin-bottom: 20px;
+
+      li {
+        margin: 0 5px;
+
+        button {
+          width: 48px;
+          height: 48px;
+          border-radius: 16px;
+          color: $colWhite;
+          background: $colBlack40;
+          @extend .font-sCoreDream;
+          font-size: 16px;
+          line-height: 0;
+        }
+
+        &.on {
+          button {
+            background: $colWhite;
+            color: $fontBlack;
+            font-weight: 600;
+          }
+        }
+      }
+    }
+
+    &-con {
+      display: none;
+
+      &.active {
+        display: block;
+      }
+
+      ul {
+        display: flex;
+      }
+    }
+  }
+
+  &-item {
+    width: calc(25% - 12px);
+    @extend .font-sCoreDream;
+    background: $colWhite;
+    margin-right: 16px;
+
+    &:nth-child(4n) {
+      margin-right: 0;
+    }
+
+    .item {
+      &-top {
+        height: 40px;
+        background: $colSliderTop;
+        text-align: center;
+        line-height: 40px;
+        font-size: 15px;
+        color: $fontBlack;
+        font-weight: 600;
+      }
+
+      &-middle {
+        padding: 20px 10px;
+        display: flex;
+        align-items: flex-start;
+        justify-content: center;
+      }
+
+      &-team {
+        text-align: center;
+        width: 80px;
+
+        img {
+          max-width: 80px;
+        }
+
+        p {
+          font-size: 13px;
+          letter-spacing: -0.52px;
+          color: $fontLightBlack;
+          font-weight: 600;
+          display: flex;
+          justify-content: center;
+        }
+      }
+
+      &-score {
+        height: 80px;
+        line-height: 80px;
+        margin: 0 20px;
+        font-size: 24px;
+        color: $fontBlack;
+        font-weight: bold;
+        @extend .font-pretendard;
+        white-space: nowrap;
+      }
+
+      &-bottom {
+        padding: 0 10px 20px;
+
+        .btn-broadcast {
+          width: 100%;
+          line-height: 40px;
+          text-align: center;
+          @extend .btn-blue;
+          @extend .font-sCoreDream;
+          font-size: 14px;
+          font-weight: 600;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+
+          &::after {
+            content: '';
+            display: inline-block;
+            width: 16px;
+            height: 16px;
+            background: url($imgPath + 'ico_tv.svg') no-repeat center;
+            margin-left: 8px;
+          }
+
+          &:disabled {
+            background-color: $btnGray;
+            color: $colWhitek40;
+
+            &::after {
+              opacity: 0.4;
+            }
+          }
+        }
+      }
+    }
+  }
 
   h2 {
     height: 100px;
@@ -16,5 +160,6 @@
     color: $colWhite;
     line-height: 1.33;
     text-align: center;
+    display: inline-block;
   }
 }
