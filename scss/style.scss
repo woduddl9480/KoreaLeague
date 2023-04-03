@@ -1,0 +1,11 @@
+@import "./modules/variable";
+@import "./modules/common";
+
+.test {
+  margin: 0 auto;
+}
+body {
+  p {
+    @extend .font-oneMobile;
+  }
+}

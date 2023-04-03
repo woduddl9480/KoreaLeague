@@ -1,0 +1,16 @@
+@import "./variable";
+
+.test {
+  background-image: url($imgPath + "sp_trend.png");
+  background-size: 129px 101px;
+  background-repeat: no-repeat;
+}
+
+.font {
+  &-oneMobile {
+    font-family: "ONE-Mobile-Title", sans-serif;
+  }
+  &-score {
+    font-family: "S-CoreDream-3Light", sans-serif;
+  }
+}
