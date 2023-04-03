@@ -1,11 +1,18 @@
 @import "./modules/variable";
 @import "./modules/common";
 
-.test {
-  margin: 0 auto;
+.test::after {
+  content: "";
+  display: inline-block;
+  background-image: url($imgPath + "ico_arrow_next.svg");
+  width: 10px;
+  height: 16px;
 }
 body {
   p {
     @extend .font-oneMobile;
+  }
+  span {
+    @extend .font-sCoreDream;
   }
 }
