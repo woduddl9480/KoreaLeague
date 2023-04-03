@@ -20,6 +20,8 @@
   }
 
   &-flex {
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
   }
 
@@ -43,8 +45,58 @@
   }
 
   &-blue {
-    background:$btnBlue;
+    background: $btnBlue;
     color: $colWhite;
+  }
+}
+
+.list {
+  &-tit {
+    position: relative;
+    margin-bottom: 10px;
+    .text {
+      position: relative;
+      @extend .font-sCoreDream;
+      width: 120px;
+      margin: 0 auto;
+      
+      font-size: 14px;
+      font-weight: bolder;
+      line-height: 1.36;
+      letter-spacing: -0.56px;
+      text-align: center;
+      z-index: 999;
+    }
+
+    .line {
+      position: absolute;
+      content: '';
+      top: 50%;
+      display: inline-block;
+      width: 100%;
+      border-bottom: 1px solid $borderGray;
+    }
+  }
+
+  &-company {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+
+    li {
+      padding: 25px 0;
+      margin-right: 4rem;
+
+      &:last-child {
+        margin-right: 0;
+      }
+    }
   }
 }
 
@@ -53,7 +105,11 @@
   padding: 10px 0;
 
   &-contents {
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
+    -webkit-box-pack: justify;
+    -ms-flex-pack: justify;
     justify-content: space-between;
   }
 
@@ -97,11 +153,17 @@
 
 .link {
   &-wrap {
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
     align-items: center;
   }
 
   &-site {
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
     margin-right: 10px;
 
@@ -112,6 +174,7 @@
   }
 
   &-sns {
+    -ms-flex-negative: 0;
     flex-shrink: 0;
 
     li {
@@ -139,8 +202,9 @@
     color: $colFooterSelect2;
     @extend .font-sCoreDream;
     overflow: hidden;
+    -o-text-overflow: ellipsis;
     text-overflow: ellipsis;
-    
+
     option {
       color: $fontBlack;
     }
@@ -165,6 +229,7 @@
   }
 
   &-right {
+    -ms-flex-negative: 0;
     flex-shrink: 0;
     padding-top: 25px;
 
@@ -209,8 +274,10 @@
           width: 1px;
           height: 16px;
           background: $colWhite;
+          opacity: 0.2;
           top: 50%;
           right: -20px;
+          -webkit-transform: translateY(-50%) translateZ(0);
           transform: translateY(-50%) translateZ(0);
         }
       }
@@ -218,6 +285,8 @@
   }
 
   .contents-wrap {
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
   }
 }
@@ -242,7 +311,8 @@
       }
     }
 
-    .link-wrap, .nav {
+    .link-wrap,
+    .nav {
       display: none;
     }
 
