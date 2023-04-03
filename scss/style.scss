@@ -1,18 +1,20 @@
 @import "./modules/variable";
 @import "./modules/common";
 
-.test::after {
-  content: "";
-  display: inline-block;
-  background-image: url($imgPath + "ico_arrow_next.svg");
-  width: 10px;
-  height: 16px;
-}
-body {
-  p {
+.slider {
+  background: linear-gradient(to right, #ff6933, #142266);
+  height: 550px;
+
+  h2 {
+    height: 100px;
+    padding-left: 101px;
+    background: url($imgPath + 'logo_white.png') no-repeat left center;
+    background-size: auto 100px;
     @extend .font-oneMobile;
-  }
-  span {
-    @extend .font-sCoreDream;
+    font-size: 36px;
+    letter-spacing: -1.44px;
+    color: $colWhite;
+    line-height: 1.33;
+    text-align: center;
   }
 }

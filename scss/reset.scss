@@ -76,6 +76,22 @@ th {
   padding: 0;
 }
 
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+button {
+  border: inherit;
+  background: inherit;
+  cursor: pointer;
+}
+
+select {
+  -webkit-appearance: none;
+  appearance: none;
+}
+
 @font-face {
   font-family: "ONE-Mobile-Title";
   src: url("https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2105_2@1.0/ONE-Mobile-Title.woff")

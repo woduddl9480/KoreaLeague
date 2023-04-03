@@ -4,7 +4,318 @@
   &-oneMobile {
     font-family: "ONE-Mobile-Title", sans-serif;
   }
+
   &-sCoreDream {
     font-family: "S-CoreDream-3Light", sans-serif;
+  }
+}
+
+.display {
+  &-block {
+    display: block;
+  }
+
+  &-flex {
+    display: flex;
+  }
+
+  &-none {
+    display: none;
+  }
+}
+
+.btn {
+  display: inline-block;
+  @extend .font-sCoreDream;
+  font-size: 14px;
+  letter-spacing: -0.56px;
+  padding: 0 20px;
+  border-radius: 16px;
+  line-height: 32px;
+
+  &-lightgray {
+    background: $btnLightGray;
+    color: $fontBlack;
+  }
+
+  &-blue {
+    background:$btnBlue;
+    color: $colWhite;
+  }
+}
+
+.header {
+  height: 100px;
+  padding: 10px 0;
+
+  &-contents {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  &-logo {
+    margin-right: 30px;
+
+    img {
+      max-width: 84px;
+    }
+  }
+
+  .hamburger {
+    display: none;
+    width: 24px;
+    height: 16px;
+    background: url($imgPath + 'hamburger.png') no-repeat center;
+  }
+}
+
+.nav {
+  height: 100%;
+  overflow: hidden;
+
+  div {
+    float: left;
+    height: 100%
+  }
+
+  a {
+    @extend .font-sCoreDream;
+    display: block;
+    height: 100%;
+    line-height: 80px;
+    padding: 0 30px;
+    font-size: 18px;
+    letter-spacing: -0.72px;
+    color: $fontBlack;
+    font-weight: 600;
+  }
+}
+
+.link {
+  &-wrap {
+    display: flex;
+    align-items: center;
+  }
+
+  &-site {
+    display: flex;
+    margin-right: 10px;
+
+    .btn {
+      margin-right: 10px;
+      white-space: nowrap;
+    }
+  }
+
+  &-sns {
+    flex-shrink: 0;
+
+    li {
+      float: left;
+      margin-right: 10px;
+      width: 32px;
+
+      &:last-child {
+        margin-right: 0;
+      }
+    }
+  }
+
+  &-select {
+    display: none;
+    width: 100%;
+    max-width: 160px;
+    height: 40px;
+    background: unset;
+    border: 1px solid $colFooterSelect;
+    margin-right: auto;
+    padding: 10px;
+    font-size: 14px;
+    letter-spacing: -0.56px;
+    color: $colFooterSelect2;
+    @extend .font-sCoreDream;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    
+    option {
+      color: $fontBlack;
+    }
+  }
+}
+
+.footer {
+  background: $colFooter;
+  padding: 30px 0;
+  @extend .font-sCoreDream;
+
+  &-left {
+    min-height: 120px;
+    background: url($imgPath + 'logo_footer.svg') left center no-repeat;
+    padding: 15px 0 15px 140px;
+
+    .address {
+      font-size: 16px;
+      color: $fontFooter;
+      font-weight: 600;
+    }
+  }
+
+  &-right {
+    flex-shrink: 0;
+    padding-top: 25px;
+
+    .copyright {
+      color: $fontFooter2;
+      font-weight: 600;
+      font-size: 13px;
+      text-align: right;
+      margin-top: 15px;
+    }
+  }
+
+  &-info {
+    overflow: hidden;
+    margin-top: 20px;
+
+    li {
+      float: left;
+      position: relative;
+      margin-right: 40px;
+      color: $fontFooter2;
+      font-size: 14px;
+
+      span {
+        letter-spacing: -0.28px;
+        font-weight: 600;
+        margin-right: 10px;
+      }
+
+      &:last-child {
+        margin-top: 8px;
+
+        em {
+          margin: 0 5px;
+        }
+      }
+
+      &:nth-last-child(n+3) {
+        &::after {
+          content: '';
+          position: absolute;
+          width: 1px;
+          height: 16px;
+          background: $colWhite;
+          top: 50%;
+          right: -20px;
+          transform: translateY(-50%) translateZ(0);
+        }
+      }
+    }
+  }
+
+  .contents-wrap {
+    display: flex;
+  }
+}
+
+.contents {
+  &-wrap {
+    max-width: 1280px;
+    width: 100%;
+    margin: 0 auto;
+  }
+}
+
+@media screen and (max-width: 1060px) {
+  .header {
+    display: block;
+    height: 80px;
+    padding: 10px 20px;
+
+    &-logo {
+      img {
+        max-width: 63px;
+      }
+    }
+
+    .link-wrap, .nav {
+      display: none;
+    }
+
+    .hamburger {
+      display: block;
+      margin: auto 0;
+    }
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .footer {
+    padding: 80px 20px 30px 20px;
+    position: relative;
+
+    .contents-wrap {
+      display: block;
+    }
+
+    &-left {
+      background-size: 80px;
+      background-position: left 30px;
+      padding: 30px 0 30px 100px;
+
+      .address {
+        font-size: 14px;
+      }
+    }
+
+    &-right {
+      padding: 0;
+
+      .copyright {
+        margin: 0;
+        font-size: 12px;
+        text-align: center;
+      }
+    }
+
+    &-info {
+      li {
+        font-size: 12px;
+        margin-bottom: 6px;
+        float: none;
+
+        &:last-child {
+          margin: 20px 0 0;
+
+          em {
+            font-size: 0;
+            display: block;
+          }
+        }
+
+        &::after {
+          display: none;
+        }
+      }
+    }
+  }
+
+  .link {
+    &-wrap {
+      width: 100%;
+      padding: 20px;
+      position: absolute;
+      left: 0;
+      top: 0;
+      border-bottom: 1px solid $colFooterBorder;
+    }
+
+    &-site {
+      display: none;
+    }
+
+    &-select {
+      display: block;
+    }
   }
 }
