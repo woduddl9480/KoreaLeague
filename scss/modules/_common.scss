@@ -1,5 +1,9 @@
 @import "./variable";
 
+html {
+  overflow-x: hidden;
+}
+
 .font {
   &-oneMobile {
     font-family: "ONE-Mobile-Title", sans-serif;
