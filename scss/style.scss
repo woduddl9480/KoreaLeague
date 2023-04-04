@@ -2,7 +2,13 @@
 @import "./modules/common";
 
 .slider {
-  background: -webkit-gradient(linear, left top, right top, from(#ff6933), to(#142266));
+  background: -webkit-gradient(
+    linear,
+    left top,
+    right top,
+    from(#ff6933),
+    to(#142266)
+  );
   background: -o-linear-gradient(left, #ff6933, #142266);
   background: linear-gradient(to right, #ff6933, #142266);
   height: 550px;
@@ -221,47 +227,56 @@
       h3 {
         margin-bottom: 20px;
       }
-
-      .list {
-        &-tit {
-          .text {
-            background: $bgMain;
+      .tabs {
+        .list {
+          &-tit {
+            .text {
+              background: $bgMain;
+            }
+            .line {
+              border-bottom: 1px solid $colGray;
+            }
           }
-          .line {
-            border-bottom: 1px solid $colGray;
-          }
-        }
-        &-chose {
-          display: flex;
-          flex-wrap: nowrap;
-          justify-content: space-between;
-          overflow-x: scroll;
-          max-width: 1280px;
-          width: 100%;
-          padding: 20px 25px;
-          background: $colWhite;
-          .team {
-            margin-right: 35px;
-            flex-shrink: 0;
-            &-img {
-              width: 64px;
-              height: 64px;
-              margin: 0px auto 8px;
-              img {
-                width: 100%;
+          &-chose {
+            display: flex;
+            flex-wrap: nowrap;
+            justify-content: space-between;
+            overflow-x: scroll;
+            max-width: 1280px;
+            width: 100%;
+            padding: 20px 25px;
+            background: $colWhite;
+            .team {
+              margin-right: 35px;
+              flex-shrink: 0;
+              &-img {
+                width: 64px;
+                height: 64px;
+                margin: 0px auto 8px;
+                img {
+                  width: 100%;
+                }
+              }
+              &-name {
+                @extend .font-sCoreDream;
+                font-size: 13px;
+                font-weight: 500;
+                line-height: 1.38;
+                letter-spacing: -0.52px;
+                text-align: center;
+              }
+              &:last-child {
+                margin-right: 0;
               }
             }
-            &-name {
-              @extend .font-sCoreDream;
-              font-size: 13px;
-              font-weight: 500;
-              line-height: 1.38;
-              letter-spacing: -0.52px;
-              text-align: center;
-            }
-            &:last-child {
-              margin-right: 0;
-            }
+          }
+        }
+      }
+      .info {
+        .tab-cont {
+          display: none;
+          &:target {
+            display: block;
           }
         }
       }
