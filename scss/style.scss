@@ -538,6 +538,14 @@
           margin-top: 10px;
         }
       }
+
+      &#team {
+        .slick {
+          &-list {
+            margin: 0 -8px 0 0;
+          }
+        }
+      }
     }
   }
 
@@ -725,7 +733,7 @@
     float: left;
     width: calc(33.33% - 10.7px);
     height: auto;
-    margin-right: 16px;
+    margin: 0 8px;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -810,24 +818,127 @@
   }
   
   &-list {
-    margin: 0 -16px;
+    margin: 0 -8px;
+  }
+}
+
+@media screen and (max-width: 1280px) {
+  .container {
+    .main {
+      &-item {
+        padding: 60px 20px;
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 900px) {
+  .lanking {
+    flex-direction: column;
+
+    .right {
+      width: 100%;
+      margin: 60px 0 0;
+      padding: 0;
+
+      a {
+        padding: 30px 20px;
+        height: 160px;
+
+        &::after {
+          bottom: 23px;
+        }
+      }
+    }
+
+    &-tab {
+      justify-content: flex-end;
+    }
+
+    &-tabcon {
+      min-height: 297px;
+    }
+
+    &-table {
+      margin-top: 20px;
+
+      col {
+        &:first-child {
+          width: 40px !important;
+        }
+
+        &:nth-child(2) {
+          width: 24px !important;
+        }
+      }
+
+      img {
+        max-width: 24px;
+      }
+
+      th {
+        font-size: 12px;
+
+        &:last-child {
+          padding-right: 5px;
+        }
+      }
+
+      td {
+        height: 44px;
+        padding: 0 5px;
+        font-size: 13px;
+
+        &:first-child {
+          font-size: 18px;
+        }
+
+        &:nth-child(2) {
+          padding-top: 4px;
+        }
+
+        &:nth-child(3) {
+          font-size: 14px;
+          padding-left: 8px;
+        }
+
+        &:last-child {
+          padding-right: 10px;
+        }
+      }
+    }
   }
 }
 
 @media screen and (max-width: 768px) {
   .slider {
+    height: auto;
+
     h2 {
-      height: auto;
+      height: 80px;
       font-size: 24px;
       line-height: 1.5;
       letter-spacing: -0.96px;
       background-size: auto 80px;
       padding-left: 75px;
+      white-space: nowrap;
+      display: flex;
+      align-items: center;
+    }
+
+    &-title {
+      margin-bottom: 30px;
     }
 
     &-tab {
-      &-con {
-        padding-left: 20px;
+      &-btn {
+        li {
+          margin-bottom: 10px;
+
+          button {
+            font-size: 15px;
+          }
+        }
       }
     }
 
@@ -836,9 +947,39 @@
     }
   }
 
+  .photo {
+    &-item {
+      margin: 0 16px 0 0;
+    }
+  }
+
+  .container {
+    .main {
+      &-contents {
+        .team {
+          &-item {
+            margin: 0 16px 0 0;
+          }
+
+          &-logo {
+            padding: 20px;
+          }
+
+          &-name {
+            font-size: 15px;
+          }
+        }
+      }
+    }
+  }
+
   .slick {
     &-list {
-      margin: 0;
+      margin: 0 -16px 0 0;
+    }
+
+    &-dots {
+      width: 100%;
     }
   }
 }

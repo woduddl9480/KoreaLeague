@@ -309,11 +309,25 @@ html {
   }
 }
 
+@media screen and (max-width: 1280px) {
+  .contents {
+    &-wrap {
+      padding: 0 20px;
+    }
+  }
+
+  .nav {
+    a {
+      padding: 0 20px;
+    }
+  }
+}
+
 @media screen and (max-width: 1060px) {
   .header {
     display: block;
     height: 80px;
-    padding: 10px 20px;
+    padding: 10px 0;
 
     &-logo {
       img {

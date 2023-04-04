@@ -111,6 +111,7 @@ for(let i = 0; i < slideDiv.length; i++) {
                 settings: {
                     slidesToShow: slideKind == 'photo' ? 1 : 3,
                     slidesToScroll: slideKind == 'photo' ? 1 : 3,
+                    arrows: false,
                 }
             }
         ]
