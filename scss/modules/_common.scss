@@ -1,5 +1,9 @@
 @import "./variable";
 
+html {
+  overflow-x: hidden;
+}
+
 .font {
   &-oneMobile {
     font-family: "ONE-Mobile-Title", sans-serif;
@@ -52,6 +56,12 @@
   &-whiteLightBlack {
     background: $colWhite;
     color: $fontLightBlack;
+  }
+  
+
+  &:disabled {
+    background: $btnGray;
+    color: $colWhitek30;
   }
 }
 
@@ -305,11 +315,38 @@
   }
 }
 
+table {
+  width: 100%;
+  @extend .font-sCoreDream;
+
+  th {
+    height: 32px;
+      background: $colGray;
+      border-top: 2px solid $colNavy;
+      color: $fontGray;
+      font-size: 13px;
+  }
+}
+
+@media screen and (max-width: 1280px) {
+  .contents {
+    &-wrap {
+      padding: 0 20px;
+    }
+  }
+
+  .nav {
+    a {
+      padding: 0 20px;
+    }
+  }
+}
+
 @media screen and (max-width: 1060px) {
   .header {
     display: block;
     height: 80px;
-    padding: 10px 20px;
+    padding: 10px 0;
 
     &-logo {
       img {
@@ -325,6 +362,14 @@
     .hamburger {
       display: block;
       margin: auto 0;
+    }
+  }
+}
+
+@media screen and (max-width: 900px) {
+  table {
+    th {
+      font-size: 12px;
     }
   }
 }
@@ -397,5 +442,9 @@
     &-select {
       display: block;
     }
+  }
+
+  .br {
+    display: block;
   }
 }

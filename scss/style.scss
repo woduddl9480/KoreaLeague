@@ -33,6 +33,7 @@
       -ms-flex-pack: center;
       justify-content: center;
       margin-bottom: 20px;
+      flex-wrap: wrap;
 
       li {
         margin: 0 5px;
@@ -65,14 +66,8 @@
     &-con {
       display: none;
 
-      &.active {
+      &.on {
         display: block;
-      }
-
-      ul {
-        display: -webkit-box;
-        display: -ms-flexbox;
-        display: flex;
       }
     }
   }
@@ -81,11 +76,8 @@
     width: calc(25% - 12px);
     @extend .font-sCoreDream;
     background: $colWhite;
-    margin-right: 16px;
-
-    &:nth-child(4n) {
-      margin-right: 0;
-    }
+    margin: 0 8px;
+    float: left;
 
     .item {
       &-top {
@@ -112,8 +104,10 @@
       }
 
       &-team {
-        text-align: center;
         width: 80px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
 
         img {
           max-width: 80px;
@@ -130,6 +124,8 @@
           -webkit-box-pack: center;
           -ms-flex-pack: center;
           justify-content: center;
+          width: 101px;
+          margin-top: 10px;
         }
       }
 
@@ -222,6 +218,10 @@
       margin: 0 auto;
       padding: 60px 0;
       width: 100%;
+
+      & + .main-item {
+        padding-top: 0;
+      }
     }
 
     &-wrap {
@@ -516,7 +516,34 @@
       .team {
         &-item {
           float: left;
-          width: calc(16.67% - 13.34px);
+          width: calc(16.67% - 13.4px);
+          margin: 0 16px 0 0;
+        }
+
+        &-logo {
+          width: 100%;
+          padding: 40px;
+          border-radius: 50%;
+          background: $colWhite;
+          display: flex;
+        }
+
+        &-name {
+          @extend .font-sCoreDream;
+          font-size: 17px;
+          letter-spacing: -0.68px;
+          color: $fontBlack;
+          font-weight: 600;
+          text-align: center;
+          margin-top: 10px;
+        }
+      }
+
+      &#team {
+        .slick {
+          &-list {
+            margin: 0 -8px 0 0;
+          }
         }
       }
     }
@@ -618,7 +645,7 @@
     li {
       margin: 0 5px;
 
-      &.active {
+      &.on {
         .btn {
           @extend .btn-blue;
         }
@@ -626,17 +653,23 @@
     }
   }
 
+  &-tabcon {
+    display: none;
+    min-height: 375px;
+
+    &.on {
+      display: block;
+    }
+  }
+
   &-table {
-    width: 100%;
     margin-top: 10px;
     @extend .font-sCoreDream;
 
     th {
-      height: 32px;
-      background: $colGray;
-      border-top: 2px solid $colNavy;
-      color: $fontGray;
-      font-size: 13px;
+      &:last-child {
+        padding-right: 10px;
+      }
     }
 
     td {
@@ -652,6 +685,10 @@
         font-weight: bold;
         @extend .font-oneMobile;
         color: $fontBlack;
+      }
+
+      &:last-child {
+        padding-right: 20px;
       }
 
       &:nth-child(3) {
@@ -689,13 +726,420 @@
     float: left;
     width: calc(33.33% - 10.7px);
     height: auto;
-    margin-right: 16px;
+    margin: 0 8px;
     display: flex;
     align-items: center;
     justify-content: center;
 
-    &:nth-child(3n) {
+    &::nth-child(3n) {
       margin-right: 0;
+    }
+  }
+}
+
+.slick {
+  &-arrow {
+    width: 10px;
+    height: 16px;
+    background: url($imgPath + "ico_prev.svg") no-repeat center;
+    position: absolute;
+    left: calc(50% - 120px);
+    bottom: 0;
+
+    &.white {
+      background-image: url($imgPath + "ico_w_prev.svg");
+      bottom: -6.5px;
+    }
+
+    &.slick-disabled {
+      background-image: url($imgPath + "ico_g_prev.svg");
+    }
+
+    &.next {
+      background-image: url($imgPath + "ico_next.svg");
+      right: calc(50% - 120px);
+      left: auto;
+
+      &.white {
+        background-image: url($imgPath + "ico_w_next.svg");
+      }
+
+      &.slick-disabled {
+        background-image: url($imgPath + "ico_g_next.svg");
+      }
+    }
+  }
+
+  &-dots {
+    width: 200px;
+    height: 2px;
+    background: $sliderDot;
+    display: flex;
+    margin: 27px auto 7px;
+
+    li {
+      width: 100%;
+      height: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+      button {
+        font-size: 0;
+        width: 100%;
+        height: 100%;
+      }
+
+      &.slick-active {
+        button {
+          background: $fontBlack;
+        }
+      }
+    }
+
+    &.white {
+      background: $colBlack40;
+
+      li {
+        &.slick-active {
+          button {
+            background: $colWhite;
+          }
+        }
+      }
+    }
+  }
+  
+  &-list {
+    margin: 0 -8px;
+  }
+}
+
+.schedule {
+  background: linear-gradient(to right, #ff6933, #142266);
+  padding: 40px 20px 20px;
+
+  &-title {
+    @extend .font-oneMobile;
+    font-size: 36px;
+    letter-spacing: -1.44px;
+    color: $colWhite;
+    text-align: center;
+    line-height: 1;
+    margin-bottom: 20px;
+  }
+
+  &-item {
+    margin-bottom: 60px;
+
+    h2 {
+      @extend .font-oneMobile;
+      letter-spacing: -1.6px;
+      color: $fontBlack;
+      font-size: 40px;
+      line-height: 1;
+      display: flex;
+      align-items: center;
+    }
+  }
+
+  &-btn {
+    margin-left: 20px;
+    font-size: 14px;
+    letter-spacing: -0.56px;
+    color: $fontBlack;
+    @extend .font-sCoreDream;
+    font-weight: 600;
+    position: relative;
+
+    &::after {
+      content: '';
+      width: 12px;
+      height: 7px;
+      background: url($imgPath + "schedule_arrow.svg") no-repeat center;
+      position: absolute;
+      right: -12px;
+      top: 50%;
+      transform: translateY(-50%) rotate(180deg);
+      transition: .2s;
+    }
+
+    .open {
+      display: none;
+    }
+
+    &.on {
+      &::after {
+        transform: translateY(-50%);
+      }
+
+      .open {
+        display: block;
+      }
+      
+      .close {
+        display: none;
+      }
+    }
+  }
+
+  &-slide {
+    height: auto;
+    overflow: hidden;
+    position: relative;
+    height: 2px;
+    margin-top: 10px;
+
+    &.on {
+      height: auto;
+    }
+
+    &::after {
+      content: '';
+      width: 100%;
+      height: 2px;
+      background: $colNavy;
+      position: absolute;
+      top: 0;
+      left: 0;
+    }
+
+    table {
+      background: $colWhite;
+      th {
+        padding-left: 20px;
+        text-align: left;
+      }
+
+      td {
+        font-size: 14px;
+        border-bottom: 1px solid $borderGray;
+        text-align: center;
+        height: 60px;
+        color: $fontLightBlack;
+
+        & + td,
+        &:nth-last-child(5) {
+          border-left: 1px solid $borderGray;
+        }
+
+        &:first-child {
+          border: none;
+          background: $colWhite !important;
+        }
+      }
+
+      tr {
+        &:first-child {
+          border-top: 1px solid $borderGray;
+          
+          td:first-child {
+            padding: 20px;
+            text-align: left;
+            vertical-align: top;
+            font-size: 15px;
+            font-weight: 600;
+            color: $fontBlack;
+          }
+        }
+
+        &:nth-child(2n) {
+          td {
+            background: $colSliderTop;
+          }
+        }
+      }
+    }
+  }
+
+  &-score {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 15px;
+    font-weight: 600;
+    color: $fontBlack;
+
+    p {
+      width: 120px;
+      letter-spacing: -0.6px;
+      text-align: right;
+      margin: 0 8px 0 0;
+
+      &:nth-of-type(2) {
+        width: 58px;
+        text-align: center;
+        margin: 0;
+      }
+
+      &:nth-of-type(3) {
+        text-align: left;
+        margin: 0 0 0 8px;
+      }
+    }
+
+    img {
+      max-width: 40px;
+    }
+  }
+}
+
+@media screen and (max-width: 1280px) {
+  .container {
+    .main {
+      &-item {
+        padding: 60px 20px;
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 900px) {
+  .lanking {
+    flex-direction: column;
+
+    .right {
+      width: 100%;
+      margin: 60px 0 0;
+      padding: 0;
+
+      a {
+        padding: 30px 20px;
+        height: 160px;
+
+        &::after {
+          bottom: 23px;
+        }
+      }
+    }
+
+    &-tab {
+      justify-content: flex-end;
+    }
+
+    &-tabcon {
+      min-height: 297px;
+    }
+
+    &-table {
+      margin-top: 20px;
+
+      col {
+        &:first-child {
+          width: 40px !important;
+        }
+
+        &:nth-child(2) {
+          width: 24px !important;
+        }
+      }
+
+      img {
+        max-width: 24px;
+      }
+
+      th {
+        &:last-child {
+          padding-right: 5px;
+        }
+      }
+
+      td {
+        height: 44px;
+        padding: 0 5px;
+        font-size: 13px;
+
+        &:first-child {
+          font-size: 18px;
+        }
+
+        &:nth-child(2) {
+          padding-top: 4px;
+        }
+
+        &:nth-child(3) {
+          font-size: 14px;
+          padding-left: 8px;
+        }
+
+        &:last-child {
+          padding-right: 10px;
+        }
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .slider {
+    height: auto;
+
+    h2 {
+      height: 80px;
+      font-size: 24px;
+      line-height: 1.5;
+      letter-spacing: -0.96px;
+      background-size: auto 80px;
+      padding-left: 75px;
+      white-space: nowrap;
+      display: flex;
+      align-items: center;
+    }
+
+    &-title {
+      margin-bottom: 30px;
+    }
+
+    &-tab {
+      &-btn {
+        li {
+          margin-bottom: 10px;
+
+          button {
+            font-size: 15px;
+          }
+        }
+      }
+    }
+
+    &-item {
+      margin: 0 16px 0 0;
+    }
+  }
+
+  .photo {
+    &-item {
+      margin: 0 16px 0 0;
+    }
+  }
+
+  .container {
+    .main {
+      &-contents {
+        .team {
+          &-item {
+            margin: 0 16px 0 0;
+          }
+
+          &-logo {
+            padding: 20px;
+          }
+
+          &-name {
+            font-size: 15px;
+          }
+        }
+      }
+    }
+  }
+
+  .slick {
+    &-list {
+      margin: 0 -16px 0 0;
+    }
+
+    &-dots {
+      width: 100%;
     }
   }
 }
