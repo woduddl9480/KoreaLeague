@@ -2,6 +2,7 @@
 @import "./modules/common";
 
 .slider {
+  background: -o-linear-gradient(left, #ff6933, #142266);
   background: -webkit-gradient(
     linear,
     left top,
@@ -9,7 +10,6 @@
     from(#ff6933),
     to(#142266)
   );
-  background: -o-linear-gradient(left, #ff6933, #142266);
   background: linear-gradient(to right, #ff6933, #142266);
   height: 550px;
   padding: 40px 0;
@@ -33,6 +33,7 @@
       -ms-flex-pack: center;
       justify-content: center;
       margin-bottom: 20px;
+      -ms-flex-wrap: wrap;
       flex-wrap: wrap;
 
       li {
@@ -47,8 +48,14 @@
           @extend .font-sCoreDream;
           font-size: 16px;
           line-height: 0;
+          display: -webkit-box;
+          display: -ms-flexbox;
           display: flex;
+          -webkit-box-pack: center;
+          -ms-flex-pack: center;
           justify-content: center;
+          -webkit-box-align: center;
+          -ms-flex-align: center;
           align-items: center;
           white-space: nowrap;
         }
@@ -105,8 +112,15 @@
 
       &-team {
         width: 80px;
+        display: -webkit-box;
+        display: -ms-flexbox;
         display: flex;
+        -webkit-box-orient: vertical;
+        -webkit-box-direction: normal;
+        -ms-flex-direction: column;
         flex-direction: column;
+        -webkit-box-align: center;
+        -ms-flex-align: center;
         align-items: center;
 
         img {
@@ -249,8 +263,13 @@
           }
 
           &-chose {
+            display: -webkit-box;
+            display: -ms-flexbox;
             display: flex;
+            -ms-flex-wrap: nowrap;
             flex-wrap: nowrap;
+            -webkit-box-pack: justify;
+            -ms-flex-pack: justify;
             justify-content: space-between;
             overflow-x: scroll;
             max-width: 1280px;
@@ -260,6 +279,7 @@
 
             .team {
               margin-right: 35px;
+              -ms-flex-negative: 1;
               flex-shrink: 1;
 
               &-img {
@@ -308,6 +328,8 @@
           }
 
           .info-box {
+            display: -webkit-box;
+            display: -ms-flexbox;
             display: flex;
             width: 100%;
             background: $colWhite;
@@ -395,7 +417,10 @@
             }
             &__list {
               width: 100%;
+              display: -webkit-box;
+              display: -ms-flexbox;
               display: flex;
+              -ms-flex-wrap: wrap;
               flex-wrap: wrap;
               li {
                 position: relative;
@@ -416,7 +441,11 @@
                   bottom: 20px;
                   left: 20px;
                   &-name {
+                    display: -webkit-box;
+                    display: -ms-flexbox;
                     display: flex;
+                    -webkit-box-align: end;
+                    -ms-flex-align: end;
                     align-items: end;
                     margin-bottom: 15px;
                     h6 {
@@ -465,6 +494,9 @@
         @media (max-width: 768px) {
           .tab-cont {
             .info-box {
+              -webkit-box-orient: vertical;
+              -webkit-box-direction: normal;
+              -ms-flex-direction: column;
               flex-direction: column;
               .img {
                 width: 160px;
@@ -478,6 +510,8 @@
                 &-box {
                   ol {
                     li {
+                      display: -webkit-box;
+                      display: -ms-flexbox;
                       display: flex;
                     }
                   }
@@ -486,7 +520,10 @@
             }
             .info-player {
               &__list {
+                -ms-flex-wrap: nowrap;
                 flex-wrap: nowrap;
+                -webkit-box-pack: justify;
+                -ms-flex-pack: justify;
                 justify-content: space-between;
                 overflow-x: scroll;
                 max-width: 1280px;
@@ -494,6 +531,7 @@
                 li {
                   width: 286px;
                   height: auto;
+                  -ms-flex-negative: 0;
                   flex-shrink: 0;
                   img {
                     width: 100%;
@@ -525,6 +563,8 @@
           padding: 40px;
           border-radius: 50%;
           background: $colWhite;
+          display: -webkit-box;
+          display: -ms-flexbox;
           display: flex;
         }
 
@@ -574,6 +614,8 @@
 }
 
 .lanking {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
 
   .left {
@@ -585,6 +627,7 @@
     width: 32.5%;
     margin-left: 16px;
     padding-top: 44px;
+    -ms-flex-negative: 0;
     flex-shrink: 0;
 
     a {
@@ -612,6 +655,8 @@
         position: absolute;
         left: 30px;
         bottom: 30px;
+        -webkit-transition: 0.2s;
+        -o-transition: 0.2s;
         transition: 0.2s;
       }
 
@@ -639,7 +684,11 @@
     position: absolute;
     width: 100%;
     top: 0;
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
     justify-content: center;
 
     li {
@@ -727,8 +776,14 @@
     width: calc(33.33% - 10.7px);
     height: auto;
     margin: 0 8px;
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
     align-items: center;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
     justify-content: center;
 
     &::nth-child(3n) {
@@ -774,14 +829,22 @@
     width: 200px;
     height: 2px;
     background: $sliderDot;
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
     margin: 27px auto 7px;
 
     li {
       width: 100%;
       height: 100%;
+      display: -webkit-box;
+      display: -ms-flexbox;
       display: flex;
+      -webkit-box-align: center;
+      -ms-flex-align: center;
       align-items: center;
+      -webkit-box-pack: center;
+      -ms-flex-pack: center;
       justify-content: center;
 
       button {
@@ -809,13 +872,21 @@
       }
     }
   }
-  
+
   &-list {
     margin: 0 -8px;
   }
 }
 
 .schedule {
+  background: -webkit-gradient(
+    linear,
+    left top,
+    right top,
+    from(#ff6933),
+    to(#142266)
+  );
+  background: -o-linear-gradient(left, #ff6933, #142266);
   background: linear-gradient(to right, #ff6933, #142266);
   padding: 40px 20px 20px;
 
@@ -838,7 +909,11 @@
       color: $fontBlack;
       font-size: 40px;
       line-height: 1;
+      display: -webkit-box;
+      display: -ms-flexbox;
       display: flex;
+      -webkit-box-align: center;
+      -ms-flex-align: center;
       align-items: center;
     }
   }
@@ -853,15 +928,19 @@
     position: relative;
 
     &::after {
-      content: '';
+      content: "";
       width: 12px;
       height: 7px;
       background: url($imgPath + "schedule_arrow.svg") no-repeat center;
       position: absolute;
       right: -12px;
       top: 50%;
+      -webkit-transform: translateY(-50%) rotate(180deg);
+      -ms-transform: translateY(-50%) rotate(180deg);
       transform: translateY(-50%) rotate(180deg);
-      transition: .2s;
+      -webkit-transition: 0.2s;
+      -o-transition: 0.2s;
+      transition: 0.2s;
     }
 
     .open {
@@ -870,13 +949,15 @@
 
     &.on {
       &::after {
+        -webkit-transform: translateY(-50%);
+        -ms-transform: translateY(-50%);
         transform: translateY(-50%);
       }
 
       .open {
         display: block;
       }
-      
+
       .close {
         display: none;
       }
@@ -895,7 +976,7 @@
     }
 
     &::after {
-      content: '';
+      content: "";
       width: 100%;
       height: 2px;
       background: $colNavy;
@@ -932,7 +1013,7 @@
       tr {
         &:first-child {
           border-top: 1px solid $borderGray;
-          
+
           td:first-child {
             padding: 20px;
             text-align: left;
@@ -953,8 +1034,14 @@
   }
 
   &-score {
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
     align-items: center;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
     justify-content: center;
     font-size: 15px;
     font-weight: 600;
@@ -996,6 +1083,9 @@
 
 @media screen and (max-width: 900px) {
   .lanking {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: column;
     flex-direction: column;
 
     .right {
@@ -1014,6 +1104,8 @@
     }
 
     &-tab {
+      -webkit-box-pack: end;
+      -ms-flex-pack: end;
       justify-content: flex-end;
     }
 
@@ -1082,7 +1174,11 @@
       background-size: auto 80px;
       padding-left: 75px;
       white-space: nowrap;
+      display: -webkit-box;
+      display: -ms-flexbox;
       display: flex;
+      -webkit-box-align: center;
+      -ms-flex-align: center;
       align-items: center;
     }
 

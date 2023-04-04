@@ -282,6 +282,7 @@
                       white-space: unset;
                       margin-bottom: 10px;
                       overflow: hidden;
+                      -o-text-overflow: ellipsis;
                       text-overflow: ellipsis;
                       display: -webkit-box;
                       -webkit-line-clamp: 2;
