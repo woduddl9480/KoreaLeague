@@ -40,6 +40,10 @@
           @extend .font-sCoreDream;
           font-size: 16px;
           line-height: 0;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          white-space: nowrap;
         }
 
         &.on {
@@ -266,6 +270,18 @@
         }
       }
     }
+
+    &-contents {
+      overflow: hidden;
+      margin-top: 10px;
+
+      .team {
+        &-item {
+          float: left;
+          width: calc(16.67% - 13.34px);
+        }
+      }
+    }
   }
 
   .sponsor {
@@ -288,6 +304,160 @@
           }
         }
       }
+    }
+  }
+}
+
+.lanking {
+  display: flex;
+
+  .left {
+    width: 100%;
+    position: relative;
+  }
+
+  .right {
+    width: 32.5%;
+    margin-left: 16px;
+    padding-top: 44px;
+    flex-shrink: 0;
+
+    a {
+      display: block;
+      width: 100%;
+      height: 179px;
+      @extend .font-sCoreDream;
+      color: $colWhite;
+      line-height: 1;
+      padding: 30px;
+      background: url($imgPath + "main_link_01.png") no-repeat center right;
+      background-size: cover;
+      position: relative;
+
+      & + a {
+        margin-top: 16px;
+        background-image: url($imgPath + "main_link_02.png");
+      }
+
+      &::after {
+        content: '';
+        width: 24px;
+        height: 20px;
+        background: url($imgPath + "ico_right.svg");
+        position: absolute;
+        left: 30px;
+        bottom: 30px;
+        transition: 0.2s;
+      }
+
+      &:hover {
+        &::after {
+          left: 35px
+        }
+      }
+
+      p {
+        font-size: 30px;
+        letter-spacing: -1.2px;
+        @extend .font-oneMobile;
+        margin-bottom: 8px;
+      }
+
+      span {
+        font-size: 15px;
+        letter-spacing: -0.6px;
+      }
+    }
+  }
+
+  &-tab {
+    position: absolute;
+    width: 100%;
+    top: 0;
+    display: flex;
+    justify-content: center;
+
+    li {
+      margin: 0 5px;
+
+      &.active {
+        .btn {
+          @extend .btn-blue
+        }
+      }
+    }
+  }
+
+  &-table {
+    width: 100%;
+    margin-top: 10px;
+    @extend .font-sCoreDream;
+
+    th {
+      height: 32px;
+      background: $colGray;
+      border-top: 2px solid $colNavy;
+      color: $fontGray;
+      font-size: 13px;
+    }
+
+    td {
+      vertical-align: middle;
+      height: 57px;
+      padding: 0 10px;
+      text-align: center;
+      color: $fontLightBlack;
+      font-size: 14px;
+
+      &:first-child {
+        font-size: 24px;
+        font-weight: bold;
+        @extend .font-oneMobile;
+        color: $fontBlack;
+      }
+
+      &:nth-child(3) {
+        text-align: left;
+        font-size: 17px;
+        letter-spacing: -0.68px;
+        color: $fontBlack;
+        font-weight: 600;
+      }
+    }
+
+    tbody {
+      tr {
+        background: $colWhite;
+        border-bottom: 1px solid $borderGray;
+
+        &:last-child {
+          border-bottom: 0;
+        }
+
+        &:nth-child(2n) {
+          background: $colSliderTop;
+        }
+      }
+    }
+
+    img {
+      max-width: 40px;
+    }
+  }
+}
+
+.photo {
+  &-item {
+    float: left;
+    width: calc(33.33% - 10.7px);
+    height: auto;
+    margin-right: 16px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    &:nth-child(3n) {
+      margin-right: 0;
     }
   }
 }
