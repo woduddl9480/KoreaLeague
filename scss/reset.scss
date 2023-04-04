@@ -88,6 +88,10 @@ button {
   border: inherit;
   background: inherit;
   cursor: pointer;
+
+  &:disabled {
+    cursor: default;
+  }
 }
 
 select {

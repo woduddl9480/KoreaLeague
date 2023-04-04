@@ -38,7 +38,7 @@ let mainslideOption = {
 $('.slider-tab-con.on .slide').slick(mainslideOption)
 
 //메인페이지 탭
-let btnArr = document.querySelectorAll('.slider-tab-btn button')
+let btnArr = document.querySelectorAll('.slider .slider-tab-btn button')
 
 function mainTab(target, indexNum) {
     let btnLiArr = document.querySelectorAll('.slider-tab-btn li')
@@ -117,3 +117,9 @@ for(let i = 0; i < slideDiv.length; i++) {
         ]
     })
 }
+
+//스케줄 js
+
+//월 선택 (중복 O)
+
+//스케줄 여닫기
