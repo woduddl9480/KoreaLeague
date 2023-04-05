@@ -1,20 +1,270 @@
 <!DOCTYPE html>
 <html lang="ko">
-  <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
-    <!-- css -->
-    <link rel="stylesheet" href="/css/style.min.css" />
-    <link rel="stylesheet" href="/css/reset.min.css" />
-  </head>
-  <body>
-    <img src="/img/banner.png" alt="" class="" />
-    <div class="test">
-      <span>ddddddddddddddddd</span>
-    </div>
-    <p>테스트테스트</p>
-    <span>테스트테스트테스트</span>
-  </body>
+
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>족구 코리아리그</title>
+  <!-- css -->
+  <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css" />
+  <link rel="stylesheet" href="/css/reset.min.css" />
+  <link rel="stylesheet" href="/css/style.min.css" />
+
+  <!-- js -->
+  <script src="//code.jquery.com/jquery-3.3.1.min.js"></script>
+  <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
+</head>
+
+<body>
+  <div class="wrap">
+    <header class="header">
+      <div class="header-contents contents-wrap">
+        <div class="display-flex">
+          <a href="#" class="header-logo">
+            <img src="../img/logo_main.png" alt="족구 코리아리그 메인 페이지 바로가기" class="only-pc" />
+          </a>
+          <nav class="nav">
+            <div>
+              <a href="#">대회소개</a>
+            </div>
+            <div>
+              <a href="#">대회일정</a>
+            </div>
+            <div>
+              <a href="#">팀ㆍ선수</a>
+            </div>
+            <div>
+              <a href="#">경기결과</a>
+            </div>
+          </nav>
+        </div>
+        <div class="link-wrap">
+          <div class="link-site">
+            <a href="#" class="btn btn-lightgray"> 대한민국족구협회 </a>
+            <a href="#" class="btn btn-lightgray"> 족구월드 </a>
+          </div>
+          <ul class="link-sns">
+            <li>
+              <a href="#">
+                <img src="../img/sns_03.png" alt="족구 코리아리그 틱톡 바로가기" />
+              </a>
+            </li>
+            <li>
+              <a href="#">
+                <img src="../img/sns_02.png" alt="족구 코리아리그 인스타그램 바로가기" />
+              </a>
+            </li>
+            <li>
+              <a href="#">
+                <img src="../img/sns_01.png" alt="족구 코리아리그 페이스북 바로가기" />
+              </a>
+            </li>
+            <li>
+              <a href="#">
+                <img src="../img/sns_04.png" alt="족구 코리아리그 유튜브 바로가기" />
+              </a>
+            </li>
+          </ul>
+        </div>
+        <button class="hamburger"></button>
+      </div>
+    </header>
+    <section class="container">
+      <div class="main intro">
+        <div class="intro-wrap">
+          <h3>대회소개</h3>
+          <div class="list">
+            <div class="list-tit">
+              <p class="text">대회 소개</p>
+              <span class="line"></span>
+            </div>
+          </div>
+          <div class="intro-contents">
+            <h2>
+              <span>2023년 일등가 <em>한우만찬배</em></span>
+              <span>족구 코리아리그</span>
+            </h2>
+            <ul class="intro-list">
+              <li class="intro-item">
+                <div class="intro-title">대회 기간</div>
+                <div class="intro-info">2023.04.16~ 2023.11.05 <span class="br"></span>(6개월 간)</div>
+              </li>
+              <li class="intro-item">
+                <div class="intro-title">대회 방식</div>
+                <div class="intro-info">
+                  예선 풀리그(2라운드) 총 110경기<br>
+                  1일 6경기 18회(일) 중계방송 및 유튜브 방송 촬영 진행
+                </div>
+              </li>
+              <li class="intro-item">
+                <div class="intro-title">대상</div>
+                <div class="intro-info">대한민국 남자체전부 11개 팀</div>
+              </li>
+              <li class="intro-item">
+                <div class="intro-title">주관</div>
+                <div class="intro-info">대한민국족구협회</div>
+              </li>
+              <li class="intro-item">
+                <div class="intro-title">주관 방송사</div>
+                <div class="intro-info">MBC SPORTS+</div>
+              </li>
+              <li class="intro-item">
+                <div class="intro-title">장소</div>
+                <div class="intro-info">충청북도 충주시 호암실내체육관</div>
+              </li>
+              <li class="intro-item">
+                <div class="intro-title">후원</div>
+                <div class="intro-info">(주)일등코리아, 충주시, 스타스포츠, 한아테크, AMS</div>
+              </li>
+              <li class="intro-item">
+                <div class="intro-title">후원안내</div>
+                <div class="intro-info">
+                  스폰서 로고가 노출되는 제작물의 경우 상위 등급 스폰서부터 중계 노출이 많은 위치로 우선 배정됩니다.<br>
+                자세한 후원 안내는 대한민국족구협회로 문의바랍니다.
+                </div>
+                <div class="intro-contact intro-extra">
+                  <div>
+                    <p>대표전화</p>
+                    <span>02-2202-5526 / 7</span>
+                    <span>(점심시간 12:00~13:00)</span>
+                  </div>
+                  <div>
+                    <p>E-mail</p>
+                    <span>jokgu@sports.or.kr</span>
+                  </div>
+                </div>
+                <ul class="intro-photo intro-extra">
+                  <li>
+                    <p>오피셜 후원배너 위치</p>
+                    <img src="../img/banner_official.png" alt="오피셜 후원배너 위치 사진 / 주황색 영역">
+                  </li>
+                  <li>
+                    <p>메인 후원배너 위치</p>
+                    <img src="../img/banner_main.png" alt="메인 후원배너 위치사진 / 파란색 영역">
+                  </li>
+                  <li>
+                    <p>메인 후원배너 위치</p>
+                    <img src="../img/banner_sub.png" alt="서브 후원배너 위치사진 / 하늘색 영역">
+                  </li>
+                </ul>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <div class="sponsor">
+        <div class="sponsor-wrap">
+          <h3>후원사</h3>
+          <div class="list">
+            <div class="list-tit">
+              <p class="text">공식 후원사</p>
+              <span class="line"></span>
+            </div>
+            <ol class="list-company">
+              <li>
+                <img src="/img/sponsor_04.png" alt="" />
+              </li>
+              <li>
+                <img src="/img/sponsor_04.png" alt="" />
+              </li>
+              <li>
+                <img src="/img/sponsor_05.png" alt="" />
+              </li>
+            </ol>
+          </div>
+          <div class="list">
+            <div class="list-tit">
+              <p class="text">대회 후원사</p>
+              <span class="line"></span>
+            </div>
+            <ol class="list-company">
+              <li>
+                <img src="/img/sponsor_06.png" alt="" />
+              </li>
+              <li>
+                <img src="/img/sponsor_03.png" alt="" />
+              </li>
+            </ol>
+          </div>
+          <div class="list">
+            <div class="list-tit">
+              <p class="text">일반 후원사</p>
+              <span class="line"></span>
+            </div>
+            <ol class="list-company">
+              <li>
+                <img src="/img/sponsor_01.png" alt="" />
+              </li>
+              <li>
+                <img src="/img/sponsor_02.png" alt="" />
+              </li>
+              <li>
+                <img src="/img/sponsor_07.png" alt="" />
+              </li>
+            </ol>
+          </div>
+        </div>
+      </div>
+    </section>
+    <footer class="footer">
+      <div class="contents-wrap">
+        <div class="footer-left">
+          <p class="address">
+            (우)05500 서울특별시 송파구 올림픽로 25 잠실 주경기장내 B208호
+          </p>
+          <ul class="footer-info">
+            <li><span>대표전화</span>02-2202-5526 / 7</li>
+            <li><span>팩스</span>02-2202-5528</li>
+            <li><span>E-mail</span>jokgu@sports.or.kr</li>
+            <li>
+              평일 09:00~18:00 (점심시간 12:00~13:00)<em> / </em>주말 및
+              공휴일 제외
+            </li>
+          </ul>
+        </div>
+        <div class="footer-right">
+          <div class="link-wrap">
+            <div class="link-site">
+              <a href="#" class="btn btn-lightgray"> 대한민국족구협회 </a>
+              <a href="#" class="btn btn-lightgray"> 족구월드 </a>
+            </div>
+            <select class="link-select">
+              <option value="">관련사이트 바로가기</option>
+              <option value="">대한민국족구협회</option>
+              <option value="">족구월드</option>
+            </select>
+            <ul class="link-sns">
+              <li>
+                <a href="#">
+                  <img src="../img/sns_03.png" alt="족구 코리아리그 틱톡 바로가기" />
+                </a>
+              </li>
+              <li>
+                <a href="#">
+                  <img src="../img/sns_02.png" alt="족구 코리아리그 인스타그램 바로가기" />
+                </a>
+              </li>
+              <li>
+                <a href="#">
+                  <img src="../img/sns_01.png" alt="족구 코리아리그 페이스북 바로가기" />
+                </a>
+              </li>
+              <li>
+                <a href="#">
+                  <img src="../img/sns_04.png" alt="족구 코리아리그 유튜브 바로가기" />
+                </a>
+              </li>
+            </ul>
+          </div>
+          <p class="copyright">
+            COPYRIGHT(C) (사)대한민국족구협회 ALL RIGHTS RESERVED
+          </p>
+        </div>
+      </div>
+    </footer>
+  </div>
+</body>
+<script src="../js/common.js"></script>
+
 </html>
