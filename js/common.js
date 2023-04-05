@@ -121,5 +121,101 @@ for(let i = 0; i < slideDiv.length; i++) {
 //스케줄 js
 
 //월 선택 (중복 O)
+let scheduleBtn = document.querySelectorAll('.schedule .slider-tab-btn button')
+let scheduleItem = document.querySelectorAll('.schedule-item')
+let scheduleBottomBtn = document.querySelectorAll('.schedule-btn')
+console.log(scheduleBtn[0])
 
-//스케줄 여닫기
+function scheduleButton(target) {
+    if(target.getAttribute('class') != 'all') {
+        target.parentElement.classList.toggle('on')
+        scheduleBtn[0].parentElement.classList.remove('on')
+    } else {
+        scheduleBtn[0].parentElement.classList.toggle('on')
+        for(let i = 1; i < scheduleBtn.length; i++) {
+            scheduleBtn[i].parentElement.classList.remove('on')
+        }
+    }
+
+    scheduleOpen()
+}
+
+function scheduleOpen() {
+    if(scheduleBtn[0].parentElement.getAttribute('class') == 'on') {
+        for(let i = 0; i < scheduleItem.length; i++) {
+            scheduleItem[i].classList.add('on')
+        }
+        return
+    } else {
+        for(let i = 0; i < scheduleItem.length; i++) {
+            scheduleItem[i].classList.remove('on')
+        }
+
+        let openMonth = document.querySelectorAll('.schedule .slider-tab-btn .on button')
+        
+        for(let i = 0; i < openMonth.length; i++) {
+            let month = openMonth[i].innerText
+            
+            for(let j = 0; j < scheduleItem.length; j++) {
+                let item = scheduleItem[j].querySelector('h2').innerText
+                if(month == item) {
+                    scheduleItem[j].classList.add('on')
+                }
+            }
+        }
+    }
+}
+
+function scheduleItemBtn(target) {
+    let item = target.closest('.schedule-item')
+    item.classList.toggle('on')
+    let month = item.querySelector('h2').innerText
+
+    if(item.classList.contains('on')) {
+        for(let i = 1; i < scheduleBtn.length; i++) {
+            let btn = scheduleBtn[i].innerText
+
+            if(month == btn) {
+                scheduleBtn[i].parentElement.classList.add('on')
+            }
+        }
+    } else {
+        for(let i = 1; i < scheduleBtn.length; i++) {
+            let btn = scheduleBtn[i].innerText
+
+            if(month == btn) {
+                scheduleBtn[i].parentElement.classList.remove('on')
+            }
+        }
+    }
+
+    let close = false;
+    for(let i = 0; i < scheduleBtn.length; i++) {
+        if(!scheduleBtn[i].parentElement.classList.contains('on')) {
+            close = true
+        }
+    }
+    
+    if(close) {
+        scheduleBtn[0].parentElement.classList.remove('on')
+        console.log('hi')
+
+        for(let i = 0; i < scheduleItem.length; i++) {
+            if(scheduleItem[i].classList.contains('on')) {
+                let index = i+1
+                scheduleBtn[index].parentElement.classList.add('on')
+            }
+        }
+    }
+}
+
+for(let i = 0; i < scheduleBtn.length; i++) {
+    scheduleBtn[i].addEventListener('click', event => scheduleButton(scheduleBtn[i]))
+}
+for(let i = 0; i < scheduleBottomBtn.length; i++) {
+    scheduleBottomBtn[i].addEventListener('click', event => scheduleItemBtn(scheduleBottomBtn[i]))
+}
+scheduleBtn[0].parentElement.classList.add('on')
+for(let i = 0; i < scheduleItem.length; i++) {
+    scheduleItem[i].classList.add('on')
+}
