@@ -39,9 +39,9 @@ html {
     @extend .font-sCoreDream;
     font-size: 14px;
     letter-spacing: -0.56px;
-    padding: 0 20px;
     border-radius: 16px;
     line-height: 32px;
+    margin-right: 30px;
 
     &-lightgray {
         background: $btnLightGray;
@@ -186,10 +186,7 @@ html {
         display: -webkit-box;
         display: -ms-flexbox;
         display: flex;
-        margin-right: 10px;
-
         .btn {
-            margin-right: 10px;
             white-space: nowrap;
         }
     }

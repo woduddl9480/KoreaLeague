@@ -1,3 +1,11 @@
+
+$('.hamburger').on('click', function () {
+    $('.hamburger-menu').show();
+});
+$('.hamburger-menu .close').on('click', function () {
+    $('.hamburger-menu').hide();
+});
+
 //메인페이지 상단 슬라이드
 let mainslideOption = {
     slide: 'div',
